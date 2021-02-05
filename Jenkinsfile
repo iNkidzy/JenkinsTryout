@@ -1,12 +1,12 @@
 pipeline {
     agent any
     triggers {
-      cron("* 1 * * *")
+      cron("0 * * * *")
     }
     stages{
       stage("Build") {
         steps {
-            sh "dotnet build /src/Tryout/JenkinsTryout/JenkinsTryout.csproj"
+            sh "dotnet build Tryout.sln"
               unstable	"Build phase not implemented"
         }
       }
